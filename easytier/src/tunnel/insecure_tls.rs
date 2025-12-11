@@ -60,7 +60,7 @@ impl rustls::client::danger::ServerCertVerifier for SkipServerVerification {
 
 pub fn init_crypto_provider() {
     let _ =
-        rustls::crypto::CryptoProvider::install_default(rustls::crypto::ring::default_provider());
+        rustls::crypto::CryptoProvider::install_default(rustls::crypto::aws_lc_rs::default_provider());
 }
 
 pub fn get_insecure_tls_client_config() -> rustls::ClientConfig {
